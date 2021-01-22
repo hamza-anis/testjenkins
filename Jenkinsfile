@@ -6,6 +6,7 @@ pipeline{
                 echo "etape de build /w git"
                 sh "python3 --version"
             }
+        }
         stage("test"){
             steps {
                 echo "etape de test /w git"
@@ -17,5 +18,4 @@ pipeline{
             }
         }
     }
-}
 }
