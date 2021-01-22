@@ -10,7 +10,7 @@ pipeline{
         }
         stage("test"){
             steps {
-                echo "etape de test /w git ggg"
+                echo "etape de test /w git toto"
             }
         }
         stage("deploy"){
