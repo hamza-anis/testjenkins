@@ -14,7 +14,7 @@ pipeline{
         }
         stage("deploy"){
             steps {
-                echo "etape de deploiment /w git"
+                echo "etape de deploiment /w git updated"
             }
         }
     }
