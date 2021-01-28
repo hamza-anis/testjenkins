@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'etape de build /w git'
-                echo 'etape de build /w update git'
+                echo 'etape de build'
+                echo 'SHOW PY version'
                 sh 'python3 --version'
             }
         }
