@@ -1,42 +1,42 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('Cleanup Workspace') {
             steps {
-                echo 'etape de build /w git'
-                echo 'etape de build /w update git'
-                sh 'python3 --version'
+                cleanWs()
+                sh '''
+                echo "Cleaned Up Workspace For Project"
+                '''
             }
         }
+        stage(' Unit Testing') {
+            steps {
+                sh '''
+                echo "Running Unit Tests"
+                '''
+            }
+        }
+
+        stage('Code Analysis') {
+            steps {
+                sh '''
+                echo "Running Code Analysis"
+                '''
+            }
+        }
+
         stage('Build Deploy Code') {
-            steps {
-                sh '''
-                echo "test condition only develop branch"
-                '''
-                sh '''
-                echo "Building code from develop"
-                '''
-                sh '''
-                echo "Deploying code from develop 2 "
-                '''
-            }
-        }
-        stage('test unitaires ') {
             when {
                 branch 'develop'
             }
             steps {
-                echo 'etape de test unitaires'
-            }
-        }
-        stage('test d\'integration') {
-            steps {
-                echo 'etape de test unitaires'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'etape de deploiment /w git updated'
+                sh '''
+                echo "Building Artifact"
+                '''
+
+                sh '''
+                echo "Deploying Code"
+                '''
             }
         }
     }
