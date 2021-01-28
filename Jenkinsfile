@@ -16,9 +16,8 @@ pipeline {
                 sh '''
                 echo "Building code from develop"
                 '''
-
                 sh '''
-                echo "Deploying code from develop"
+                echo "Deploying code from develop 2 "
                 '''
             }
         }
