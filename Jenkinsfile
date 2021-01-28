@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 echo 'etape de test unitaires'
-                sh 'npm run test'
+                sh 'python3 index.py'
             }
         }
         stage('test d\'integration') {

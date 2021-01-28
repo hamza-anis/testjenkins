@@ -10,10 +10,13 @@ class TestStringMethods(unittest.TestCase):
         self.assertTrue('FOO'.isupper())
         self.assertFalse('Foo'.isupper())
 
+    def test_addition(self):
+        self.assertTrue(1+1 == 3)
+        self.assertFalse('Foo'.isupper())
+
     def test_split(self):
         s = 'hello world'
         self.assertEqual(s.split(), ['hello', 'world'])
-        # check that s.split fails when the separator is not a string
         with self.assertRaises(TypeError):
             s.split(2)
 
