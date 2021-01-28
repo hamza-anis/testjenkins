@@ -20,7 +20,7 @@ pipeline {
         stage('test d\'integration') {
             steps {
                 echo 'etape de test unitaires'
-                echo 'etape de test trigger'
+                echo 'etape de test trigger release'
             }
         }
         stage('deploy') {
