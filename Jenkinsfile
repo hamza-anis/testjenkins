@@ -8,35 +8,24 @@ pipeline {
                 sh 'python3 --version'
             }
         }
-        stage('Build Deploy Code') {
-            steps {
-                sh '''
-                echo "test condition only develop branch"
-                '''
-                sh '''
-                echo "Building code from develop"
-                '''
-                sh '''
-                echo "Deploying code from develop 2 "
-                '''
-            }
-        }
-        stage('test unitaires ') {
+        stage('tests') {
             when {
-                branch 'develop'
+                branch 'release'
             }
             steps {
                 echo 'etape de test unitaires'
-            }
-        }
-        stage('test d\'integration') {
-            steps {
-                echo 'etape de test unitaires'
+                echo 'etape de test ti'
+                echo 'etc... '
             }
         }
         stage('deploy') {
+            when {
+                branch 'release'
+            }
             steps {
-                echo 'etape de deploiment /w git updated'
+                sh '''
+                echo "deploying into release env"
+                '''
             }
         }
     }
