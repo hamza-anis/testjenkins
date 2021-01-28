@@ -1,21 +1,35 @@
-pipeline{
+pipeline {
     agent any
     stages {
-        stage("build"){
+        stage('build') {
             steps {
-                echo "etape de build /w git"
-                echo "etape de build /w update git"
-                sh "python3 --version"
+                echo 'etape de build /w git'
+                echo 'etape de build /w update git'
+                sh 'python3 --version'
             }
         }
-        stage("test"){
+        stage('Build Deploy Code') {
+            when {
+                branch 'develop'
+            }
             steps {
-                echo "etape de test /w git toto"
+                sh '''
+                echo "Building code from develop"
+                '''
+
+                sh '''
+                echo "Deploying code from develop"
+                '''
             }
         }
-        stage("deploy"){
+        stage('test') {
             steps {
-                echo "etape de deploiment /w git updated"
+                echo 'etape de test /w git toto'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'etape de deploiment /w git updated'
             }
         }
     }
