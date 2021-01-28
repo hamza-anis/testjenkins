@@ -19,6 +19,7 @@ pipeline {
         stage('test d\'integration') {
             steps {
                 echo 'etape de test unitaires'
+                 echo 'etape de test discord'
             }
         }
         stage('deploy') {
