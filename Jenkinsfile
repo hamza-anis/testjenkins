@@ -14,6 +14,9 @@ pipeline {
             }
             steps {
                 sh '''
+                echo "test condition only develop branch"
+                '''
+                sh '''
                 echo "Building code from develop"
                 '''
                 sh '''
