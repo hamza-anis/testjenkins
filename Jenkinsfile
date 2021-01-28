@@ -8,20 +8,12 @@ pipeline {
                 sh 'python3 --version'
             }
         }
-<<<<<<< HEAD
-        stage('tests') {
-=======
         stage('test unitaires ') {
->>>>>>> develop
             when {
                 branch 'release'
             }
             steps {
                 echo 'etape de test unitaires'
-<<<<<<< HEAD
-                echo 'etape de test ti'
-                echo 'etc... '
-=======
                 sh 'python3 index.py'
             }
         }
@@ -29,7 +21,6 @@ pipeline {
             steps {
                 echo 'etape de test unitaires'
                 echo 'etape de test trigger'
->>>>>>> develop
             }
         }
         stage('deploy') {
@@ -37,13 +28,9 @@ pipeline {
                 branch 'release'
             }
             steps {
-<<<<<<< HEAD
                 sh '''
                 echo "deploying into release env"
                 '''
-=======
-                echo 'etape de deploiment sur env dev'
->>>>>>> develop
             }
         }
     }
