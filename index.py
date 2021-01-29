@@ -12,6 +12,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_addition(self):
         self.assertTrue(1+1 == 3)
+        print("test faux")
         self.assertFalse('Foo'.isupper())
 
     def test_split(self):
