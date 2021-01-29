@@ -7,7 +7,7 @@ pipeline {
                 sh 'python3 --version'
             }
         }
-        stage('test unitaires ') {
+        stage('test unitaires') {
             when {
                 branch 'develop'
             }
