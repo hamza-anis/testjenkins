@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'etape de build'
                 echo 'SHOW PY version'
                 sh 'python3 --version'
             }
@@ -19,7 +18,7 @@ pipeline {
         }
         stage('test d\'integration') {
             steps {
-                echo 'etape de test unitaires'
+                echo 'etape de test d\'integration'
                 echo 'etape de test trigger'
             }
         }
