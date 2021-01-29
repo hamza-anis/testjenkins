@@ -11,6 +11,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertFalse('Foo'.isupper())
 
     def test_addition(self):
+        print("hello")
         self.assertTrue(1+1 == 2)
         self.assertFalse('Foo'.isupper())
 
